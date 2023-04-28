@@ -15,8 +15,7 @@ fun main() {
         it.imprimirExtrato()
     }
 }
-class conta (val cliente: String, var saldo: Double = null, var numero: Int, val agencia: Int){
-        
+class conta (val cliente: String, var saldo: Double = null, var numero: Int, val agencia: Int){        
     fun depositar(dep: Double){
         dep = readLine()!!.toDouble()
         saldo += dep
