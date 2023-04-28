@@ -1,17 +1,17 @@
 fun main(){
-    var cc1 = conta(ncliente, saldo, num, ag)
-    var cc2 = conta(ncliente, saldo, num, ag)
-    conta1.imprimeextrato()
-    conta2.imprimeextrato()
+    var cc1 = conta(cliente, saldo, numero, agencia)
+    var cc2 = conta(cliente, saldo, numero, agencia)
+    conta1.imprimirExtrato()
+    conta2.imprimirExtrato()
     conta1.depositar(100.0)
     conta2.depositar(400.0)
     conta2.retirar(50.0)
     conta1.transferir(70.0, conta2)
-    conta1.imprimeextrato()
-    conta2.imprimeextrato()
+    conta1.imprimirExtrato()
+    conta2.imprimirExtrato()
 }
 
-class conta (val ncliente: String, var saldo: Double = null, var num: Int, val ag: Int){
+class conta (val cliente: String, var saldo: Double = null, var numero: Int, val agencia: Int){
         
     fun depositar(dep: Double){
         dep = readLine()!!.toDouble()
@@ -27,22 +27,22 @@ class conta (val ncliente: String, var saldo: Double = null, var num: Int, val a
         }
     }
 
-    fun transferir(transf: Double, num.saldo: Conta){
+    fun transferir(transf: Double, numero.saldo: Conta){
         transf = readLine()!!.toDouble()
-        num = readLine()!!.toInt()
+        numero = readLine()!!.toInt()
         if (saldo < transf){
             println("Saldo insuficiente")
         } else{
             saldo -= transf
-            num.saldo += transf
+            numero.saldo += transf
         }
     }
 
     fun imprimeextrato(){
         println("Extrato:")
-        println("Cliente: $ncliente")
-        println("Agência: $ag")
-        println("Número da conta: $num")
+        println("Cliente: $cliente")
+        println("Agência: $agencia")
+        println("Número da conta: $numero")
         println("Saldo: R$$saldo")
     }
 }
