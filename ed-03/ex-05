@@ -2,7 +2,6 @@ fun main() {
     val conta = Conta("Chorao", 500.0, 1313, "0013")
     conta.imprimirBoleto()
 }
-
 class ContaPoupanca(cliente: String, saldo: Double, numero: Int, agencia: Number) : Conta(cliente, saldo, numero, agencia) {
 
     fun aplicarJuros() {
@@ -11,7 +10,6 @@ class ContaPoupanca(cliente: String, saldo: Double, numero: Int, agencia: Number
     }
 }
 class Conta (val cliente: String, var saldo: Double = null, var numero: Int, val agencia: Int){
-
     fun depositar(dep: Double){
         dep = readLine()!!.toDouble()
         saldo += dep
