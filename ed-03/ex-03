@@ -13,12 +13,12 @@ fun main() {
     }
 
     println("Contas em ordem alfabética:")
-    contas.sortedBy { it.nome }.forEach {
+    contas.sortedBy { it.cliente }.forEach {
         it.imprimirExtrato()
     }
 }
 
-class conta (val nome: String, var saldo: Double = null, var num: Int, val ag: Int){
+class conta (val cliente: String, var saldo: Double = null, var numero: Int, val agencia: Int){
         
     fun depositar(dep: Double){
         dep = readLine()!!.toDouble()
@@ -34,22 +34,22 @@ class conta (val nome: String, var saldo: Double = null, var num: Int, val ag: I
         }
     }
 
-    fun transferir(transf: Double, num.saldo: ContaBancaria){
+    fun transferir(transf: Double, numero.saldo: ContaBancaria){
         transf = readLine()!!.toDouble()
         num = readLine()!!.toInt()
         if (saldo < operacao){
             println("Saldo insuficiente")
         } else{
             saldo -= transf
-            num.saldo += transf
+            numero.saldo += transf
         }
     }
 
     fun imprimirExtrato(){
         println("Extrato:")
-        println("Cliente: $nome")
-        println("Agência: $ag")
-        println("Número da conta: $num")
+        println("Cliente: $cliente")
+        println("Agência: $agencia")
+        println("Número da conta: $numero")
         println("Saldo: R$$saldo")
     }
 }
