@@ -2,7 +2,7 @@ fun main(){
 
 }
 
-class Conta (val ncliente: String, var saldo: Double = null, var num: Int, val ag: Int){
+class Conta (val nome: String, var saldo: Double = null, var num: Int, val ag: Int){
         
     fun depositar(dep: Double){
         dep = readLine()!!.toDouble()
@@ -31,7 +31,7 @@ class Conta (val ncliente: String, var saldo: Double = null, var num: Int, val a
 
     fun imprimeExtrato(){
         println("Extrato:")
-        println("Cliente: $ncliente")
+        println("Cliente: $nome")
         println("Agência: $ag")
         println("Número da conta: $num")
         println("Saldo: R$$saldo")
