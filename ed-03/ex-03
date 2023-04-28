@@ -1,0 +1,55 @@
+fun main() {
+    val contas = listOf(
+        conta("Japinha", 5000.0, 5050, "5"),
+        conta("Badaui", 500.0, 9090, "6"),
+        conta("Chorao", 1000.0, 0013, "1300"),
+        conta("Dave", 10000.0, 3030, "3"),
+        conta("Chad", 7000.0, 3333, "9")
+    )
+
+    println("Contas em ordem crescente:")
+    contas.sortedBy { it.saldo }.forEach {
+        it.imprimirExtrato()
+    }
+
+    println("Contas em ordem alfabética:")
+    contas.sortedBy { it.nome }.forEach {
+        it.imprimirExtrato()
+    }
+}
+
+class conta (val nome: String, var saldo: Double = null, var num: Int, val ag: Int){
+        
+    fun depositar(dep: Double){
+        dep = readLine()!!.toDouble()
+        saldo += dep
+    }
+
+    fun retirar(ret: Double){
+        ret = readLine()!!.toDouble()
+        if(saldo < ret){
+            println("Saldo insuficiente")
+        } else{
+            saldo -= ret
+        }
+    }
+
+    fun transferir(transf: Double, num.saldo: ContaBancaria){
+        transf = readLine()!!.toDouble()
+        num = readLine()!!.toInt()
+        if (saldo < operacao){
+            println("Saldo insuficiente")
+        } else{
+            saldo -= transf
+            num.saldo += transf
+        }
+    }
+
+    fun imprimirExtrato(){
+        println("Extrato:")
+        println("Cliente: $nome")
+        println("Agência: $ag")
+        println("Número da conta: $num")
+        println("Saldo: R$$saldo")
+    }
+}
