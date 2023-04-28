@@ -1,0 +1,44 @@
+fun main() {
+    val conta = Conta("Chorao", 500.0, 1313, "0013")
+    conta.imprimirBoleto()
+}
+
+class ContaPoupanca(cliente: String, saldo: Double, numero: Int, agencia: Number) : Conta(cliente, saldo, numero, agencia) {
+
+    fun aplicarJuros() {
+        val juros = saldo * 0.003
+        saldo += juros
+    }
+}
+class Conta (val cliente: String, var saldo: Double = null, var numero: Int, val agencia: Int){
+
+    fun depositar(dep: Double){
+        dep = readLine()!!.toDouble()
+        saldo += dep
+    }
+    fun retirar(ret: Double){
+        ret = readLine()!!.toDouble()
+        if(saldo < ret){
+            println("Saldo insuficiente")
+        } else{
+            saldo -= ret
+        }
+    }
+    fun transferir(enviar: Double, num.saldo: Conta){
+        enviar = readLine()!!.toDouble()
+        numero = readLine()!!.toInt()
+        if (saldo < emviar){
+            println("Saldo insuficiente")
+        } else{
+            saldo -= enviar
+            numero.saldo += enviar
+        }
+    }
+    fun imprimieExtrato(){
+        println("Extrato:")
+        println("Cliente: $cliente")
+        println("Agência: $agencia")
+        println("Número da conta: $numero")
+        println("Saldo: R$$saldo")
+    }
+}
