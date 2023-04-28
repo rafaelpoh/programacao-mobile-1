@@ -1,31 +1,26 @@
 fun main() {
-    val conta1 = Conta("Badaui", 200.0, 9090, 9090)
+    val conta1 = Conta("Badaui", 2000.0, 9090, 9090)
     val conta2 = ContaPoupanca("Chorao", 1000.0, 1313, 1313)
-
     conta1.depositar(100.0)
     conta2.depositar(1000.0)
     conta1.retirar(200.0)
     conta2.aplicarJuros()
     conta1.transferir(300.0, conta2)
-
     println("Extrato da conta 1:")
     conta1.imprimeextrato()
     println()
-
     println("Extrato da conta 2:")
     conta2.imprimeextrato()
-    println()
 }
 
-class ContaPoupanca(nome: String, saldo: Double, num: Int, ag: Number) : Conta(nome, saldo, num, ag) {
-
+class ContaPoupanca(cliente: String, saldo: Double, numero: Int, agencia: Number) : Conta(cliente, saldo, numero, agencia) {
     fun aplicarJuros() {
         val juros = saldo * 0.003
         saldo += juros
     }
 }
 
-class Conta (val nome: String, var saldo: Double = null, var num: Int, val ag: Int){
+class Conta (val cliente: String, var saldo: Double = null, var numero: Int, val agencia: Int){
 
     fun depositar(dep: Double){
         dep = readLine()!!.toDouble()
@@ -41,22 +36,22 @@ class Conta (val nome: String, var saldo: Double = null, var num: Int, val ag: I
         }
     }
 
-    fun transferir(enviar: Double, num.saldo: Conta){
+    fun transferir(enviar: Double, numero.saldo: Conta){
         enviar = readLine()!!.toDouble()
-        num = readLine()!!.toInt()
+        numero = readLine()!!.toInt()
         if (saldo < emviar){
             println("Saldo insuficiente")
         } else{
             saldo -= enviar
-            num.saldo += enviar
+            numero.saldo += enviar
         }
     }
 
     fun imprimeextrato(){
         println("Extrato:")
-        println("Cliente: $nome")
-        println("Agência: $ag")
-        println("Número da conta: $num")
+        println("Cliente: $cliente")
+        println("Agência: $agencia")
+        println("Número da conta: $numero")
         println("Saldo: R$$saldo")
     }
 }
