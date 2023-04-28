@@ -1,0 +1,39 @@
+fun main(){
+
+}
+
+class Conta (val ncliente: String, var saldo: Double = null, var num: Int, val ag: Int){
+        
+    fun depositar(dep: Double){
+        dep = readLine()!!.toDouble()
+        saldo += dep
+    }
+
+    fun retirar(saque: Double){
+        op = readLine()!!.toDouble()
+        if(saldo < saque){
+            println("Sem saldo")
+        } else{
+            saldo -= saque
+        }
+    }
+
+    fun transferir(transf: Double, num.saldo: Conta){
+        transf = readLine()!!.toDouble()
+        num = readLine()!!.toInt()
+        if (saldo < transf){
+            println("Saldo insuficiente")
+        } else{
+            saldo -= transf
+            num.saldo += transf
+        }
+    }
+
+    fun imprimeExtrato(){
+        println("Extrato:")
+        println("Cliente: $ncliente")
+        println("Agência: $ag")
+        println("Número da conta: $num")
+        println("Saldo: R$$saldo")
+    }
+}
