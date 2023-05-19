@@ -20,7 +20,7 @@
         android:layout_height="96dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/testeimagens"
+        android:src="@drawable/fotinha.jpg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/testeimagens" />
