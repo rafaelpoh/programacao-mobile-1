@@ -23,7 +23,7 @@
         android:src="@drawable/fotinha.jpg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/testeimagens" />
+        app:srcCompat="@drawable/fotinha.jpg" />
 
     <TextView
         android:id="@+id/textView2"
